@@ -1,11 +1,105 @@
 ---
+import HTML from "/public/images/html.png";
+import CSS from "/public/images/css.png";
+import TYPESCRIPT from "/public/images/typescript.png";
+import { Image, Picture } from "@astrojs/image/components";
 import "../layouts/MainLayout.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+
+const identity = {
+  firstName: "Maximiliano",
+  country: "Valdivia, Chile",
+  occupation: "Desarrollador Full Stack",
+};
+
+const skills = [
+  "HTML",
+  "CSS",
+  "TypeScript",
+  "React",
+  "Astro",
+  "TailwindCSS",
+  "tRPC",
+  "NextJS",
+  "GraphQL",
+  "Apollo",
+];
 ---
 
 <MainLayout title={"Maximiliano"}>
   <body>
-    <h1>Astro</h1>
-    <h1>My astro site</h1>
+    <p class="text-2xl font-semibold text-white">
+      <span class="text-5xl font-semibold text-white">Hola!</span> Mi nombre es
+      <span class="text-gray-400 text-5xl align-center">
+        {identity.firstName}</span
+      >
+    </p>
+    <p>Vivo en {identity.country} y soy {identity.occupation}.</p>
+    <p>Entre las tecnologias que utlizo estan:</p>
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 py-3">
+      <div
+        class="p-6 shadow-xl rounded-xl hover:font-semibold hover:text- text-white hover:bg-slate-800 hover:scale-105 ease-in duration-300"
+      >
+        <div class="grid grid-cols-2 gap-4 justify-center items-center">
+          <div class="m-auto">
+            <Image src={HTML} alt="html" width="70" height="70" />
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <h3>HTML</h3>
+          </div>
+        </div>
+      </div>
+      <div
+        class="p-6 shadow-xl rounded-xl hover:font-semibold text-white hover:bg-slate-800 hover:scale-105 ease-in duration-300"
+      >
+        <div class="grid grid-cols-2 gap-4 justify-center items-center">
+          <div class="m-auto">
+            <Image src={CSS} alt="css" width="64" height="64" />
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <h3>CSS</h3>
+          </div>
+        </div>
+      </div>
+      <div
+        class="p-6 shadow-xl rounded-xl hover:font-semibold text-white hover:bg-slate-800 hover:scale-105 ease-in duration-300"
+      >
+        <div class="grid grid-cols-2 gap-4 justify-center items-center">
+          <div class="flex flex-col items-center justify-center">
+            <div class="m-auto">
+              <Image src={TYPESCRIPT} alt="typescript" width="64" height="64" />
+            </div>
+            <h3>TypeScript</h3>
+          </div>
+        </div>
+      </div>
+      <div
+        class="p-6 shadow-xl rounded-xl hover:font-semibold text-white hover:bg-slate-800 hover:scale-105 ease-in duration-300"
+      >
+        <div class="grid grid-cols-2 gap-4 justify-center items-center">
+          <div class="flex flex-col items-center justify-center">
+            <h3>Python</h3>
+          </div>
+        </div>
+      </div>
+      <div
+        class="p-6 shadow-xl rounded-xl hover:font-semibold text-white hover:bg-slate-800 hover:scale-105 ease-in duration-300"
+      >
+        <div class="grid grid-cols-2 gap-4 justify-center items-center">
+          <div class="flex flex-col items-center justify-center">
+            <h3>TailwindCSS</h3>
+          </div>
+        </div>
+      </div>
+      <div
+        class="p-6 shadow-xl rounded-xl hover:font-semibold text-white hover:bg-slate-800 hover:scale-105 ease-in duration-300"
+      >
+        <div class="grid grid-cols-2 gap-4 justify-center items-center">
+          <div class="flex flex-col items-center justify-center">
+            <h3>React</h3>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </MainLayout>
